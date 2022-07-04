@@ -1,0 +1,57 @@
+el componente BrowserRouter nos permitira que al cambiar las rutas del navegador y que estas no existan, ya no 
+nos muestra como una pagina no encontrada , pudiendo navegar y cambiar de paginas
+
+-Todas las rutas, que mostraran cierto componente, a traves del componete  'Route', deben estar dentro de otro componente llamado 'Routes'-
+
+el componente Route nos permite definir una ruta, una url, que apartir de que cuando visiten a esa url , podre mostrar
+un componente. Route recibe 2 atributos, path, el cual es el nombre de la ruta.
+si le pongo '/' es como decir que visiten la pagina principal y que muestren el elemento definido por su
+segundo atributo, que es element, este element me permite decir que cuando se visite la url definida en path, yo
+voy a colocar el sgte componente
+
+se debe realizar la navegacion a traves de un componente llamado  navlink, para evitar que se refresque la pagina
+
+hay un componente especial en react-router-dom que reemplaza una etiqueta a, cambiara el estado de la aplicacion, sin
+la necesidad de refrescar la pagina. entonces, en lugar de las etiquetas 'a' pondre un navlink y el atributo href 
+ahora se llamara 'to'.
+con el atributo classname, ejecuta un callback que usa tiene un objeto como parametro, tambien me devuelve un objeto
+y si lo muestro tiene una propiedad llamada 'isActive' con los valores de true o false, diciendo en donde estamos 
+parados, es bueno para agregar ciertas clases por ejemplo
+
+fuera del navbar, se puede seguir utilizando enlaces, pero sin el elemento 'a', a traves del componente link
+se lo importa al igual que navlink, pero no podemos tener o realizar acciones al saber si estamos en esa url
+en especifico al igual que con navlink
+
+<NavLink> es una versión especial del <Link> que agregará atributos de estilo al elemento renderizado cuando coincida 
+con la URL actual.
+es la unica diferencia, ambas nos permiten evitar el refrescar de las paginas
+
+uso de parametros en los Route, al poner :id por ejemplo, estoy diciendo que, lo que ira ahi se llamara id, puede
+ir cualquier cosa y siempre se renderizara el elemento definido por el atributo element
+
+usaremos un hook llamado useParams
+
+React Router proporciona un hook, useParams(), para acceder al valor de los parámetros de URL. Cuando se llama, 
+useParams() devuelve un objeto que asigna los nombres de los parámetros de URL a sus valores en la URL actual.
+
+el componente Navigate
+
+    en versiones anteriores se llamaba Redirect
+    lo que hace es redireccionarme a la ruta que coloque en su atributo 'to', entonces:
+    <Route path="/usuarios" element={<Navigate to="/user"/>}/>
+
+    cuando entremos a la ruta "/usuarios", automaticamente nos redireccionara a la ruta "/user"
+
+    es util por ejemplo cuando se cierre sesion del usuario , redireccionarlo a la pagina inicial
+
+    el componente Navigate por defecto, hace un push de la ruta que pasamos, nos permite regresar a la pagina anterior
+    apila nueva ruta. si no quiero que me deje volver a la pagina anterior, con solo poner el atributo 'replace' estaria
+<Route path="/usuarios" element={<Navigate replace to="/user"/>}/>
+
+tambien podemos tener esta funcionalidad a traves de un hook, llamado useNavigate , en el cual nos permite realizar la 
+misma funcionalidad que nos brinda el componente Navigate mediante el paso de una direccion como argumento en una variable
+
+ejemplo:
+ const navigate=useNavigate()
+ 
+ navigate('/')

@@ -1,0 +1,68 @@
+@import url('https://fonts.googleapis.com/css2?family=Epilogue:wght@400;500&family=Roboto:ital,wght@1,500&display=swap');
+
+body{
+  margin: 0;
+}
+*{
+  box-sizing: border-box;
+}
+img{
+  display: block;
+}
+
+.imghero_mobile{
+  width: 100%;
+}
+
+.navbar{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  /* border: 2px black solid; */
+  padding:0 15px;
+}
+.icon_menu{
+  height: 1.5rem;
+}
+.txt{
+  
+  font-family: 'Epilogue', sans-serif;
+  font-weight: 700;
+}
+.txt_titulo{
+  font-size: 2rem;
+  font-weight: 900;
+}
+.txt_descripcion{
+  margin: 0 30px;
+  font-weight: 100;
+  color:gray
+}
+.home_mobile{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.btn_learnmore{
+  width: 150px;
+  height: 40px;
+  background-color: black;
+  color: white;
+  font-family: 'Epilogue', sans-serif;
+  font-weight: 500;
+  border-radius: 5px;
+}
+
+.footer{
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.img_footer{
+  width: 100px;
+  height: 20px;
+  object-fit: contain;
+  
+}
